@@ -1,0 +1,48 @@
+﻿@model CityCRUD.Models.BuildingViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading"> Create</div>
+    <div class="panel-body">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-8">
+                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                 </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Address, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-8">
+                            @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Address)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Allow, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-8">
+                            @Html.CheckBoxFor(model => model.Allow, new { @class = "checkbox" })
+                            @Html.ValidationMessageFor(model => model.Allow)
+                        </div>
+                    </div>
+                <div class="form-group">
+                    <div class="col-lg-8"></div>
+                    <div class="col-lg-3">
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                       
+                    </div>
+                </div>
+                </div>
+        }
+    </div>
+</div>
+

@@ -1,0 +1,49 @@
+﻿@model CityCRUD.Models.BuildingViewModel
+
+@{
+    ViewBag.Title = "Building";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Building Datails
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model=>model.Id, new {@class = "col-md-2 control-label" })
+                <div class="col-md-8">
+                    @Html.DisplayFor(model => model.Id, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, new { @class = "col-md-2 control-label" })
+                <div class="col-md-8">
+                    @Html.DisplayFor(model => model.Name, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, new { @class = "col-md-2 control-label" })
+                <div class="col-md-8">
+                    @Html.DisplayFor(model => model.Address, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Allow, new { @class = "col-md-2 control-label" })
+                <div class="col-md-8">
+                    @Html.DisplayFor(model => model.Allow, new { @class = "form-control" })
+                </div>
+            </div>
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-10">
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

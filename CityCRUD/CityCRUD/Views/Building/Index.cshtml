@@ -1,0 +1,48 @@
+﻿@model IEnumerable<CityCRUD.Models.BuildingViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+@Html.ActionLink("Add", "Create",null, new { @class = "btn btn-info btn-sm" })
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(m=>m.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Allow)
+            </th>
+        </tr>
+    </thead>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(m=>item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(m=>item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(m=>item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(m => item.Allow)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info btn-sm" }) |
+            @Html.ActionLink("Details", "Building", new { id = item.Id }, new { @class = "btn btn-info btn-sm" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-info btn-sm" })
+        </td>
+    </tr>
+
+}
+</table>
